@@ -39,25 +39,33 @@
 - "mimics" the TDD cycle
 - optimized for descriptiveness
 </section>
-				<section>
 					<section><h1>Is it TDD?</h1>
 						<p class="fragment">no it is a flavor of BDD</p>
                 </section>
                 <section><h1>Ah so it is like Behat?</h1>
-                <p class="fragment">not really as Behat is StoryBDD</p>
-                    <p class="fragment">PhpSpec is SpecBDD</p>
-					</section>
+                	<p class="fragment">not really as Behat is StoryBDD</p>
+					<p class="fragment">PhpSpec is SpecBDD</p>
 				</section>
 					<section>
-						<section data-markdown="">## What are the differences to other test tools?
+						<section><h2>What are the differences to other <span style="color:grey">(test)</span> tools?
 							</section>
-						<section data-markdown="">Describes individual clases *small image of code example*</section>
+						<section data-markdown="">Describes individual clases
+    # spec/Example/HelloSpec.php
+    class HelloSpec extends ObjectBehavior
+    {
+        // ...
+        function it_is_saying_hello_for_greeting()
+        {
+            $this->greet->shouldReturn("Hello");
+        }
+    }
+						</section>
 						<section data-markdown="">Architectural Design tool</section>
-						<section data-markdown="">Mimics the "tdd triangle"</section>
+						<section data-markdown="">Mimics the "TDD triangle"</section>
 						<section><h2>TDD Triangle</h2>
-							<div class="fragment" style="color:red">red</div>
-							<div class="fragment" style="color:green;margin-top:100px;position:absolute;right:200px">green</div>
-							<div class="fragment" style="color:white;margin-top:100px;position:absolute;left:200px">refactor</div></section>
+							<div class="fragment" style="color:red">failing test</div>
+							<div class="fragment" style="color:green;margin-top:100px;position:absolute;right:200px">passing test</div>
+							<div class="fragment" style="color:white;margin-top:100px;position:absolute;left:200px">refactor/improve</div></section>
 						<section><h2>Spec Triangle</h2>
 							<div class="fragment" style="color:red">generate spec</div>
 							<div class="fragment" style="color:green;margin-top:100px;position:absolute;right:200px">generate code</div>
@@ -65,28 +73,45 @@
 						<section><h1>Conclusion</h1>PhpUnit is a test tool, PhpSpec is a design tool</section>
 					</section>
 				<section>
-					<section data-markdown="">## Benefits of another tools to use</section>
-					<section data-markdown="">Improves
-					- Design
-					- Naming
-					- Code Conventions / Complexity
-					- Tools ??
-					</section>
-					<section>Refactoring is possible</section>
+                <section data-markdown="">## Benefits of adding just another tool</section>
+                <section><h2>Improves</h2>
+				Application Design
+                <p class="fragment">Naming</p>
+                <p class="fragment">Code Conventions / Quality</p>
+                </section>
+                <section>Refactoring is possible</section>
 				</section>
-				<section></section>
-				<section>Installation within Magento</section>
-				<section>describe object behavior
-					phpspec describe</section>
-				<section>write firrst test</section>
-				<section>verify object behavior
-					run test</section>
-				<section>fake it not make it
-					write code</section>
-				<section>di.xml</section>
-				<section>links</section>
-				<section>Installation</section>
-				<section>Installation</section>
+				<section data-markdown="">## Installation within Magento
+    composer require-dev phpspec/phpspec:2.*
+				</section>
+				<section data-markdown="">## describe object behavior
+    ./bin/phpspec describe Nhp/example/Model/Hello
+				</section>
+				<section ><h2>Create first Spec</h2>
+    <pre><code data-trim data-noescape> phpspec r
+    10  ! is initializable
+    class Nhp\example\Model\Hello does not exist.
+    ----  broken examples
+    1 specs
+    1 examples (1 broken)
+    19ms
+    Do you want me to create `Nhp\example\Model\Hello` for you?
+    [Y/n]
+    [...]
+    1 specs
+    1 examples (1 passed)
+    16ms</code></pre>
+				</section>
+				<section data-markdown="">## Verify object behavior
+    phpspec run --fake
+
+KISS: Fake it till you need to make it
+				</section>
+				<section data-markdown="">## Links
+					- http://www.phpspec.net
+					- http://jamescowie.me/blog/2016/02/hello-world-magento2-and-phpspec/
+					- https://github.com/nagno/phpspec-bootstrap-magento2
+					</sectioni>
 			</div>
 		</div>
 
