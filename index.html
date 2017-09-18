@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/magento.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -20,20 +20,28 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+			body:after {
+				content: url('mm17pl_slide_logo_with_hashtag.png');
+				position: fixed;
+				transform: scale(.45);
+				bottom: -5%;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section><h1>PHP Spec</h1>
+				<section data-background-image=""><h1>PHP Spec</h1>
 				One of the tools you probably should know better</section>
 <section data-markdown="">## Nils Preuß
 - Magento since 2009
-- Polo Motorrad & Sportswear GmbH
-- Technical lead ecommerce
-- Twitter: [@tutnix](https://twitter.tutnix)
+- GastroHero GmbH
+- Teamlead Web Development
+- Twitter: [@tutnix](https://twitter.com/tutnix)
 - Github: [https://github.com/nhp](https://github.com/nhp)</section>
 <section data-markdown="">## What is PHPSpec?
-- based on RSpec
+- based on RSpec (2005)
 - done by Macello Duarte (@_md) & Konstantin Kudryashov (@everzet)
 - encourage good design
 - "mimics" the TDD cycle
@@ -65,25 +73,26 @@
 						<section><h2>TDD Triangle</h2>
 							<div class="fragment" style="color:red">failing test</div>
 							<div class="fragment" style="color:green;margin-top:100px;position:absolute;right:200px">passing test</div>
-							<div class="fragment" style="color:white;margin-top:100px;position:absolute;left:200px">refactor/improve</div></section>
+							<div class="fragment" style="color:grey;margin-top:100px;position:absolute;left:200px">refactor/improve</div></section>
 						<section><h2>Spec Triangle</h2>
-							<div class="fragment" style="color:red">generate spec</div>
-							<div class="fragment" style="color:green;margin-top:100px;position:absolute;right:200px">generate code</div>
-							<div class="fragment" style="color:white;margin-top:100px;position:absolute;left:200px">edit code</div></section>
-						<section><h1>Conclusion</h1>PhpUnit is a test tool, PhpSpec is a design tool</section>
+							<div class="fragment" style="color:red">describec</div>
+							<div class="fragment" style="color:green;margin-top:100px;position:absolute;right:200px">implement</div>
+							<div class="fragment" style="color:grey;margin-top:100px;position:absolute;left:200px">improve</div></section>
+						<section><h1>Conclusion</h1>PhpUnit is a test tool with design as benefit <br>
+							PhpSpec is a design tool with testing as benefit</section>
 					</section>
 				<section>
-                <section data-markdown="">## Benefits of adding just another tool</section>
+                <section data-markdown="">## Benefits of adding "just another tool"</section>
                 <section><h2>Improves</h2>
 				Application Design
                 <p class="fragment">Naming</p>
                 <p class="fragment">Code Conventions / Quality</p>
                 </section>
-                <section>Refactoring is possible</section>
+					<section><h2>Refactoring is possible</h2></section>
 				</section>
 				<section data-markdown="">## Installation within Magento
-    composer require-dev phpspec/phpspec:2.*
-				</section>
+    composer require-dev phpspec/phpspec:4.*
+	Install https://github.com/nagno/phpspec-bootstrap-magento2.git</section>
 				<section data-markdown="">## describe object behavior
     ./bin/phpspec describe Nhp/example/Model/Hello
 				</section>
@@ -107,11 +116,8 @@
 
 KISS: Fake it till you need to make it
 				</section>
-				<section data-markdown="">## Links
-					- http://www.phpspec.net
-					- http://jamescowie.me/blog/2016/02/hello-world-magento2-and-phpspec/
-					- https://github.com/nagno/phpspec-bootstrap-magento2
-					</sectioni>
+				<section >Nils Preuß || <a href="https://twitter/tutnix">@tutnix</a> <br />https://github.com/nhp/phpspec-slides
+					</section>
 			</div>
 		</div>
 
